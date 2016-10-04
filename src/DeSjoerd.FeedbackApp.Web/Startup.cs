@@ -34,8 +34,8 @@ namespace DeSjoerd.FeedbackApp.Web
             services.AddMvc();
 
             //TODO
-            //services.AddDbContext<FeedbackDataContext>(options => options.UseSqlServer("FeedbackConnection"));
-            //services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+            services.AddDbContext<FeedbackDataContext>(options => options.UseInMemoryDatabase());
+            services.AddScoped<IFeedbackRepository, FeedbackRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
